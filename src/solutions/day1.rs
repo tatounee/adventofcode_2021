@@ -1,6 +1,6 @@
 pub fn part1(input: &str) -> u32 {
     let height = input
-        .split('\n')
+        .lines()
         .map(|line| line.trim().parse::<u32>().unwrap())
         .collect::<Vec<_>>();
 
@@ -11,7 +11,7 @@ pub fn part1(input: &str) -> u32 {
 
 pub fn part2(input: &str) -> u32 {
     let height = input
-        .split('\n')
+        .lines()
         .map(|line| line.trim().parse::<u32>().unwrap())
         .collect::<Vec<_>>();
 

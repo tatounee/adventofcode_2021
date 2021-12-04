@@ -1,6 +1,6 @@
 pub fn part1(input: &str) -> i32 {
     let (x, y) = input
-        .split('\n')
+        .lines()
         .map(|line| {
             let mut line = line.trim().split(' ');
             (
@@ -20,7 +20,7 @@ pub fn part1(input: &str) -> i32 {
 
 pub fn part2(input: &str) -> i32 {
     let (x, y, _) = input
-        .split('\n')
+        .lines()
         .map(|line| {
             let mut line = line.trim().split(' ');
             (

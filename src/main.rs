@@ -9,5 +9,5 @@ use solutions::*;
 fn main() {
     let input = load_input("input.txt").unwrap();
     let solution = day1::part1(&input);
-    println!("Day {} - Puzzle {} : {}", 1, 1, solution);
+    println!("Day {} - Part {} : {}", 1, 1, solution);
 }

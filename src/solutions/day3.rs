@@ -1,5 +1,5 @@
 pub fn part1(input: &str) -> u32 {
-    let mut input = input.split('\n').map(|l| l.trim());
+    let mut input = input.lines().map(|l| l.trim());
 
     let mut acc = vec![];
 
@@ -34,12 +34,12 @@ pub fn part2(input: &str) -> u32 {
         .map_while(|c| if c != '\n' { Some(c) } else { None })
         .count();
     let first = input
-        .split('\n')
+        .lines()
         .map(|line| (line.trim().starts_with('1')) as i8 * 2 - 1)
         .sum::<i8>();
 
     let lines = input
-        .split('\n')
+        .lines()
         .map(|line| {
             line.trim()
                 .chars()
@@ -96,7 +96,7 @@ pub fn part2(input: &str) -> u32 {
 }
 
 fn get_sum_bit_each_line(input: &str) -> Vec<i32> {
-    let mut input = input.split('\n').map(|l| l.trim());
+    let mut input = input.lines().map(|l| l.trim());
 
     let mut acc = vec![];
 
