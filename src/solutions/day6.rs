@@ -39,6 +39,33 @@ pub fn part2(input: &str) -> u64 {
         .sum()
 }
 
+// Inspired by the Jonathan Paulson's solution
+// See: https://www.youtube.com/watch?v=fHlWM8CIrlI
+pub fn part2_bis(input: &str) -> u128 {
+    let mut fishs = HashMap::with_capacity(9);
+
+    input
+        .trim()
+        .split(',')
+        .map(|n| n.parse::<u8>().unwrap())
+        .for_each(|n| *fishs.entry(n).or_insert(0) += 1);
+
+    for _ in 0..256 {
+        let mut new = HashMap::with_capacity(9);
+        for (fish, quantity) in fishs.iter() {
+            if *fish == 0 {
+                *new.entry(6).or_insert(0) += quantity;
+                new.insert(8, *quantity);
+            } else {
+                *new.entry(*fish - 1).or_insert(0) += quantity
+            }
+        }
+        fishs = new;
+    }
+
+    fishs.values().sum()
+}
+
 lazy_static! {
     static ref CALCULATE: HashMap<u8, (Vec<u8>, u64)> = {
         let mut fishs = HashMap::new();
