@@ -1,5 +1,7 @@
 use std::fmt;
 
+use crate::utils::abs_diff;
+
 pub fn part1(input: &str) -> u32 {
     global(input, Map::trace)
 }
@@ -128,14 +130,5 @@ impl fmt::Debug for Map {
                 .collect::<Vec<String>>()
                 .join("\n"),
         )
-    }
-}
-
-// The int_abs_diff feature is not stabilized at this time
-fn abs_diff(x1: usize, x2: usize) -> usize {
-    if x1 < x2 {
-        x2 - x1
-    } else {
-        x1 - x2
     }
 }
