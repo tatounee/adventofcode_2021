@@ -1,10 +1,10 @@
 #![allow(dead_code)]
 
-mod input;
 mod solutions;
+mod utils;
 
-use input::load_input;
 use solutions::*;
+use utils::load_input;
 
 fn main() {
     let input = load_input("input.txt").unwrap();
