@@ -21,9 +21,9 @@ pub fn part2(input: &str) -> u32 {
     for i in 1.. {
         let to_flashs = octopus.grow();
         octopus.flash(to_flashs).unwrap();
-        
+
         if octopus.count_and_reset_flash() == 100 {
-            return i
+            return i;
         }
     }
 
