@@ -100,7 +100,7 @@ pub fn part2(input: &str) -> u32 {
         .sum()
 }
 
-// The caller should assert that v1 and v2 is sorted
+// The caller should assert that v1 and v2 are sorted
 unsafe fn intersect(v1: &[char], v2: &[char]) -> Vec<char> {
     let mut inter = vec![];
 
