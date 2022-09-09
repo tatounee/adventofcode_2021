@@ -1,3 +1,6 @@
+
+use crate::utils::vec_of_bit_to_u32;
+
 pub fn part1(input: &str) -> u32 {
     let mut input = input.lines().map(|l| l.trim());
 
@@ -113,14 +116,4 @@ fn get_sum_bit_each_line(input: &str) -> Vec<i32> {
     }
 
     acc
-}
-
-fn vec_of_bit_to_u32(vec: &[u8]) -> u32 {
-    let mut nomber = 0;
-    let mut power_of_two = 1;
-    for d in vec.iter().rev() {
-        nomber += power_of_two * *d as u32;
-        power_of_two <<= 1;
-    }
-    nomber
 }

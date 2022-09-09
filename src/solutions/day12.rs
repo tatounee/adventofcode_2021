@@ -3,9 +3,11 @@ use std::collections::{HashMap, HashSet};
 pub fn part1(input: &str) -> u32 {
     let network = parse_network(input);
 
+    0u8.checked_add(4);
     let mut path = HashSet::new();
     path.insert("start");
     shearch1(&network, "start", path)
+
 }
 
 pub fn part2(input: &str) -> u32 {

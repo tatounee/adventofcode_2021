@@ -18,3 +18,14 @@ pub fn abs_diff<T: PartialOrd + Sub<Output = T>>(x1: T, x2: T) -> T {
         x1 - x2
     }
 }
+
+
+pub fn vec_of_bit_to_u32(vec: &[u8]) -> u32 {
+    let mut number = 0;
+    let mut power_of_two = 1;
+    for d in vec.iter().rev() {
+        number += power_of_two * *d as u32;
+        power_of_two <<= 1;
+    }
+    number
+}
